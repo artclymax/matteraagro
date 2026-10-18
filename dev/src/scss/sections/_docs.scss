@@ -1,0 +1,48 @@
+@use "../tools" as *;
+
+.docs {
+	padding-bottom: 140px;
+	@include media($mobile) {
+		padding-bottom: 60px;
+	}
+	&__container {
+	}
+
+	&__btn-box {
+	}
+}
+
+.docs-swiper {
+	&__wrapper {
+	}
+
+	&__btn {
+	}
+
+	&__btn-prev {
+	}
+
+	&__btn-next {
+	}
+}
+
+.docs-slide {	
+	width: 385px !important;
+
+	@include media($tablet) {
+		width: 340px !important;
+	}
+	&__wrapper {
+		height: 421px;
+		border-radius: 6px;
+		overflow: hidden;
+	}
+}
+
+.swiper-btn {
+	&__prev {
+	}
+
+	&__next {
+	}
+}

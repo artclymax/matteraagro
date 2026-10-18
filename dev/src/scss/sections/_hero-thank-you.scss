@@ -1,0 +1,47 @@
+@use "../tools" as *;
+
+.hero-thank-you {
+	&__form {
+		max-width: 390px;
+		@include flex-column;
+		gap: 20px;
+		width: 100%;
+
+		p {
+			@include reset;
+
+			@include media($mobile) {
+				@include text-s;
+			}
+		}
+	}
+
+	&__input {
+		border: 1px solid var(--color-brand-green);
+		color: var(--color-dark);
+	}
+
+	&__btn {
+		max-width: 100%;
+	}
+
+	.hero-404 {
+		&__container {
+			@include media($mobile, min) {
+				color: var(--color-dark);
+			}
+		}
+
+		&__wrapper {
+		}
+
+		&__title {
+		}
+
+		&__descr {
+		}
+
+		&__image {
+		}
+	}
+}

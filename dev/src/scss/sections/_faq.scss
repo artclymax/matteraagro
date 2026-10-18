@@ -1,0 +1,107 @@
+@use "../tools" as *;
+
+.faq {
+	padding-bottom: 140px;
+	@include media($mobile) {
+		padding-bottom: 60px;
+	}
+
+	&__container {
+	}
+
+	&__list {
+		@include reset-list;
+		@include flex-column;
+		gap: 20px;
+	}
+}
+.container {
+}
+.faq-item {
+	background: var(--color-overlay);
+	border-radius: 6px;
+	transition: all 0.3s;
+	overflow: hidden;
+	&.spoiler-active {
+		background: var(--color-brand-bg);
+	}
+	&__btn {
+		@include reset-btn;
+		text-align: left;
+		width: 100%;
+		padding: adapt(18, 10) adapt(25, 10);
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		gap: 10px;
+	}
+
+	&__title {
+		@include reset;
+		@include text-l;
+	}
+
+	&__icon {
+		@include square(adapt(32, 24));
+		background: var(--color-brand-green);
+		border-radius: 50%;
+		position: relative;
+
+		&::before,
+		&::after {
+			content: "";
+			position: absolute;
+			width: 16px;
+			height: 1.5px;
+			background: var(--color-main-bg);
+			border-radius: 10px;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			transition: all 0.3s;
+		}
+		&::after {
+			transform: translate(-50%, -50%) rotate(90deg);
+			.spoiler-active & {
+				transform: translate(-50%, -50%) rotate(180deg);
+			}
+		}
+	}
+
+	&__content {
+	}
+
+	&__descr {
+		padding-inline: adapt(25, 10);
+		padding-bottom: adapt(18, 10);
+		position: relative;
+		@include media($mobile) {
+			padding-top: 10px;
+		}
+		&::before {
+			content: "";
+			position: absolute;
+			top: -10px;
+			left: 50%;
+			transform: translateX(-50%);
+			width: 96%;
+			height: 2px;
+			background: var(--color-brand-green);
+
+			@include media($mobile) {
+				top: 0;
+				width: 94%;
+				height: 1px;
+			}
+		}
+	}
+}
+
+.spoiler-active {
+}
+.descr {
+}
+.image-box {
+}
+.hidden-mobile {
+}

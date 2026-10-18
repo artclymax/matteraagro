@@ -1,0 +1,43 @@
+@use "../tools" as *;
+
+:root {
+	--color-0: rgba(0, 0, 0, 0);
+	--color-black: #000;
+	--color-white: #fff;
+
+	// Colors
+	--color-main-text: #1e242a; // основной текст
+	--color-secondary-text: #5e6165; // вторичный текст
+	--color-max-contrast: #0f1316; // максимальный контраст
+	--color-main-bg: #f7f8fa; // основной фон
+	--color-overlay: #eef1f4; // подложки
+	--color-brand-bg: #decfc6; // Brand зеленый
+	--color-brand-green: #153526; // Brand зеленый
+	--color-brand-green-2: #294433; // Brand зеленый (2)
+	--color-blueberry-blue: #2f5dcc; // Blueberry Blue
+	--color-borders: #DCE2E7; // бордеры
+
+	--color-dark: #1a1817; // без переменной
+	--color-green: #2D6945;
+	--color-gray: #6E6A62;
+	// translusent (полупрозрачные)
+
+	// Layouts
+	--header-height: #{adapt(108, 59)};
+	--section-padding: #{adapt(140, 60)};
+	--section-padding-05: #{adapt(70, 30)};
+
+	--container-width: 1200px;
+	--container-padding: 10px; //! даже если контейнер на весь экран, отступы оставь а ширину сделай на 100%
+
+	// Fonts
+	--font-size-html: 100%; // 1rem = 1px ===> calc(1 / 16 * 100%)
+	--font-size: #{adapt(18, 16)};
+	--font-family-main: "Manrope-VF", "Manrope", sans-serif;
+	--font-family-title: "Prata", serif;
+	//--font-family-title-second: "Forum", serif;
+	//--font-family-mono: "IBM Plex Mono", monospace;
+
+	--line-height: 150%;
+	--letter-spacing: auto;
+}

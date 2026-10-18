@@ -1,0 +1,77 @@
+@use "../tools" as *;
+
+.hero {
+	position: relative;
+	padding-block: adapt(345, 153) 120px;
+	color: var(--color-main-bg);
+
+	@include media($mobile) {
+		padding-bottom: 260px;
+	}
+
+	&__container {
+		display: flex;
+		flex-direction: column;
+
+		@include media($mobile) {
+			position: relative;
+			z-index: 2;
+		}
+	}
+
+	&__content {
+		max-width: 714px;
+		width: 100%;
+
+		@include media($mobile) {
+			max-width: 100%;
+		}
+	}
+
+	&__title {
+		text-wrap: balance;
+		&:not(:last-child) {
+			margin-bottom: adapt(40, 10);
+		}
+	}
+
+	&__descr {
+		text-wrap: balance;
+		font-size: adapt(20, 16);
+	}
+
+	&__btn {
+		margin-top: 20px;
+	}
+
+	&__arrow-down {
+		display: inline-flex;
+		align-self: center;
+		margin-top: 112px;
+		transition: all 0.3s;
+
+		@include hover {
+			transform: translateY(4px);
+		}
+	}
+
+	&__bg-box {
+		position: absolute;
+		z-index: -1;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+
+		@include media($mobile) {
+			z-index: 1;
+		}
+	}
+
+	&__bg-small {
+		@include media($mobile, min) {
+			display: none;
+		}
+	}
+}

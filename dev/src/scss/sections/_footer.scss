@@ -1,0 +1,108 @@
+@use "../tools" as *;
+
+.footer {
+	color: var(--color-main-bg);
+	padding-block: 20px;
+
+	&__container {
+		@include flex-column;
+		gap: adapt(40, 20);
+	}
+
+	&__top {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 20px adapt(60, 20, $tablet);
+
+		@include media($mobile) {
+			flex-direction: column;
+			justify-content: center;
+		}
+	}
+
+	&__logo {
+		@include media($mobile) {
+			width: 100%;
+			flex-direction: row;
+			align-items: center;
+		}
+	}
+
+	&__menu {
+	}
+
+	&__bottom {
+	}
+
+	&__links {
+		color: var(--color-white);
+		display: flex;
+		align-items: center;
+		flex-wrap: wrap;
+		gap: 20px 10px;
+		justify-content: space-between;
+		@include media($mobile) {
+			flex-direction: column;
+		}
+		@include media($mobile, min) {
+			& > a:last-of-type {
+				order: 3;
+			}
+		}
+	}
+
+	&__link {
+		text-decoration: none;
+		color: inherit;
+		display: inline-flex;
+		transition: all 0.3s;
+
+		@include hoverLine(slide, currentColor, 2px);
+
+		@include hover {
+			color: var(--color-brand-bg);
+		}
+	}
+
+	&__copy {
+		font-size: inherit;
+	}
+}
+
+.footer-menu {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	width: 100%;
+	gap: 40px 20px;
+
+	@include media($mobile) {
+		flex-direction: column;
+	}
+	&__list {
+		@include reset-list;
+		display: flex;
+		align-items: center;
+		flex-wrap: wrap;
+		gap: 20px;
+		@include media($mobile) {
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+		}
+		a {
+			text-decoration: none;
+			color: inherit;
+			display: inline-flex;
+			transition: all 0.3s;
+
+			@include hoverLine(slide, currentColor, 2px);
+
+			@include hover {
+				color: var(--color-brand-bg);
+			}
+		}
+	}
+	&__btn {
+	}
+}

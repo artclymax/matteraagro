@@ -1,0 +1,82 @@
+@use "../tools" as *;
+
+.direction {
+	position: relative;
+	padding-block: 0 adapt(246, 60);
+
+	@include media($mobile) {
+		margin-top: -200px;
+	}
+
+	&__container {
+		@include media($mobile) {
+			position: relative;
+			z-index: 2;
+		}
+	}
+
+	&__list {
+		--min: 285px;
+		--gap: 20px;
+	}
+
+	&__item {
+	}
+
+	&__bg-box {
+		position: absolute;
+		z-index: -1;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+
+	&__bg-small {
+	}
+}
+
+.direction-item {
+	background-color: var(--color-overlay);
+	border: 1px solid var(--color-blueberry-blue);
+	border-radius: 6px;
+	box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.25);
+	padding: adapt(20, 10, $tablet) adapt(15, 10, $tablet);
+
+	display: flex;
+	flex-direction: column;
+
+	&__icon {
+		display: flex;
+		width: adapt(50, 44);
+		height: 44px;
+
+		&:not(:last-child) {
+			margin-bottom: 10px;
+		}
+	}
+
+	&__title {
+		color: var(--color-dark);
+
+		&:not(:last-child) {
+			margin-bottom: 10px;
+		}
+	}
+
+	&__descr {
+		flex-grow: 1;
+		color: var(--color-secondary-text);
+		@include text-m;
+
+		&:not(:last-child) {
+			margin-bottom: adapt(20, 10);
+		}
+	}
+
+	&__btn {
+		max-width: 100%;
+		gap: 8px;
+	}
+}

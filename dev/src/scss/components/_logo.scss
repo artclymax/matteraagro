@@ -1,0 +1,42 @@
+@use "../tools" as *;
+
+.logo {
+	flex-shrink: 0;
+	display: flex;
+	gap: 10px adapt(24, 10, $tablet); 
+	align-items: center;
+	@include media($tablet) {
+		flex-direction: column;
+		align-items: flex-start;
+	}
+	a {
+		text-decoration: none;
+		color: inherit;
+		font-size: 20px;
+		font-weight: 500;
+		flex-shrink: 0;
+		display: inline-flex;
+		align-items: center;
+		transition: all 0.3s;
+
+		width: 120px;
+
+		@include media($tablet) {
+			width: 61px;
+		}
+
+		img {
+			width: 100%;
+		}
+		@include hover {
+			opacity: 0.7;
+		}
+	}
+	&__descr {
+		font-size: 16px;
+		em {
+			font-style: normal;
+			@include text-caption;
+		}
+	}
+}

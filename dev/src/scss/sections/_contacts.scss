@@ -1,0 +1,157 @@
+@use "../tools" as *;
+
+.contacts {
+	padding-bottom: 60px;
+	&__container {
+	}
+
+	&__wrapper {
+		display: grid;
+		grid-template-columns: 0.7fr 1fr;
+		gap: 60px 20px;
+
+		@include media($mobile) {
+			grid-template-columns: 1fr;
+		}
+	}
+
+	&__content {
+		padding-top: 20px;
+		@include flex-column;
+		gap: adapt(30, 20);
+
+		@include media($tablet) {
+			padding-top: 0;
+		}
+	}
+
+	&__phones {
+	}
+
+	&__list {
+		margin: 0;
+		list-style-type: none;
+		//@include reset-list;
+		@include flex-column;
+		gap: 20px;
+	}
+
+	&__item {
+	}
+
+	&__form {
+		border: 1px solid rgba(255, 255, 255, 0.1);
+		border-radius: 6px;
+		padding: adapt(20, 10, $tablet);
+		box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.25);
+		background: rgba(255, 255, 255, 0.04);
+	}
+
+	.icon {
+		--width: 44px;
+		--bg-size: 24px;
+		gap: 8px;
+		align-items: start;
+	}
+
+	.bg-decor {
+		margin-top: -60px;
+		//transform: translateY(-60px);
+		@include media($mobile) {
+			margin-top: unset;
+		}
+	}
+}
+
+.contacts-phones {
+	width: 100%;
+
+	&.icon {
+		align-items: center;
+		gap: 18px;
+	}
+
+	&__wrapper {
+		width: 100%;
+		@include flex-column;
+		gap: 10px;
+	}
+
+	&__list {
+		@include reset-list;
+		display: flex;
+		flex-wrap: wrap;
+		gap: 10px 20px;
+	}
+
+	&__item {
+	}
+
+	&__link {
+		@include text-l;
+		text-decoration: none;
+		color: inherit;
+		@include hover-link;
+	}
+
+	&__messengers {
+		@include reset-list;
+		display: flex;
+		flex-wrap: wrap;
+		gap: 10px adapt(48, 14, $mobile);
+	}
+}
+
+.contacts-messengers {
+	&__item {
+		@include square(32px);
+	}
+
+	&__link {
+		display: block;
+		@include hover-icon;
+	}
+}
+.contacts-item {
+	&__wrapper {
+		@include flex-column;
+		gap: 10px;
+	}
+	&__list {
+		@include reset-list;
+		@include flex-column;
+		gap: 8px;
+	}
+
+	&__item {
+	}
+
+	&__link {
+		text-decoration: none;
+		color: inherit;
+		@include hover-link;
+	}
+
+	&__title {
+		@include reset;
+		@include text-s;
+	}
+
+	&__address {
+		font-style: normal;
+	}
+}
+.icon--center {
+	align-items: center !important;
+}
+.icon--phone {
+	--icon-bg: url("../../../public/images/icons/phones-icon.svg");
+}
+
+.icon--email {
+	--icon-bg: url("../../../public/images/icons/email-icon.svg");
+}
+
+.icon--address {
+	--icon-bg: url("../../../public/images/icons/address-icon.svg");
+}

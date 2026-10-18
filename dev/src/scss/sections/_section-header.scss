@@ -1,0 +1,20 @@
+@use "../tools" as *;
+
+.section-header {
+	color: var(--color-main-bg);
+
+	&:not(:last-child) {
+		margin-bottom: adapt(60, 40);
+	}
+
+	&__title {
+		text-wrap: balance;
+		&:not(:last-child) {
+			margin-bottom: adapt(20, 10);
+		}
+	}
+
+	&__descr {
+		font-size: adapt(20, 16);
+	}
+}

@@ -1,0 +1,144 @@
+@use "../tools" as *;
+
+.header {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	color: var(--color-max-contrast);
+	.home & {
+		color: var(--color-main-bg);
+	}
+	@include media($tablet) {
+		margin-top: 10px;
+	}
+
+	&__container {
+	}
+
+	&__top {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		gap: 10px;
+		margin-bottom: 10px;
+	}
+
+	&__phones {
+	}
+
+	&__emails {
+		@include reset-list;
+	}
+
+	&__socials {
+		@include media($tablet) {
+			margin-left: auto !important;
+		}
+	}
+
+	&__bottom {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 40px;
+
+		@include media($tablet) {
+			gap: 10px;
+			align-items: flex-start;
+		}
+	}
+
+	&__logo {
+	}
+
+	&__menu {
+		flex: 1;
+	}
+
+	&__burger-btn {
+	}
+}
+
+.header-phones,
+.header-emails {
+	@include reset-list;
+	@include flex;
+	gap: 10px;
+	--bg-size: 16px;
+	--width: 44px;
+	
+	.home & {
+		&.icon {
+			&::before {
+				filter: invert(100%);
+			}
+		}
+	}
+	&::before {
+		margin-right: -10px;
+	}
+
+	&__item {
+	}
+
+	&__link {
+		display: inline-flex;
+		text-decoration: none;
+		color: var(--color-max-contrast);
+
+		.home & {
+			color: var(--color-main-bg);
+		}
+		font-weight: 600;
+
+		@include hoverLine(slide, currentColor, 2px);
+	}
+}
+
+.header-socials {
+	@include reset-list;
+	display: flex;
+
+	&__item {
+	}
+
+	&__link {
+		display: flex;
+		align-items: center;
+		color: inherit;
+		text-decoration: none;
+		font-weight: 600;
+
+		@include hover {
+			.header-socials__icon {
+				transform: scale(1.1);
+			}
+		}
+		span {
+			@include media($tablet) {
+				display: none;
+			}
+		}
+	}
+
+	&__icon {
+		@include square(44px);
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		transition: all 0.3s;
+
+		img {
+			@include square(24px);
+		}
+	}
+}
+
+.icon--phone-light {
+	--icon-bg: url("../../../public/images/icons/phones-icon-light.svg");
+}
+
+.icon--email-light {
+	--icon-bg: url("../../../public/images/icons/email-icon-light.svg");
+}

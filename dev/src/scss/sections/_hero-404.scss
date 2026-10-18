@@ -1,0 +1,44 @@
+@use "../tools" as *;
+
+.hero-404 {
+	position: relative;
+	padding-top: calc(var(--header-height) + 20px);
+	padding-bottom: adapt(60, 20);
+	&__container {
+		height: calc(100dvh - var(--header-height));
+		@include flex-center;
+		flex-direction: column;
+		text-align: center;
+		gap: 20px;
+
+		@include media($mobile, min) {
+			color: var(--color-main-bg);
+		}
+	}
+
+	&__title {
+		@include media($mobile) {
+			@include title-3;
+		}
+	}
+
+	&__descr {
+		max-width: 984px;
+		@include media($mobile) {
+			margin-top: -10px;
+			@include text-s;
+		}
+	}
+
+	&__btn {
+	}
+
+	&__image {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		z-index: -1;
+	}
+}

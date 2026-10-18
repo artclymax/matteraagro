@@ -1,0 +1,63 @@
+@use "../tools" as *;
+
+.gallery {
+	padding-bottom: 140px;
+	@include media($mobile) {
+		padding-bottom: 60px;
+	}
+	&__container {
+	}
+	.section-bg__bg-box .bg-decor {
+		@include media($mobile) {
+			--object-pos: top right;
+		}
+	}
+}
+
+.gallery-swiper {
+	&__wrapper {
+	}
+
+	&__pagination {
+	}
+
+	&__btn {
+	}
+
+	&__btn-prev {
+	}
+
+	&__btn-next {
+	}
+}
+
+.gallery-slide {
+	&__grid {
+		display: grid;
+		grid-template-columns: 1fr 0.8fr 0.6fr;
+		gap: 20px;
+	}
+
+	&__item {
+		height: adapt(375, 258, $tablet);
+		border-radius: 6px;
+		overflow: hidden;
+		@include media($mobile) {
+			height: 536px;
+		}
+		@include media($mobile, min) {
+			&:first-child {
+				height: 100%;
+				grid-row: span 2;
+			}
+		}
+	}
+}
+
+.swiper-btn {
+	&__prev {
+	}
+
+	&__next {
+	}
+}
